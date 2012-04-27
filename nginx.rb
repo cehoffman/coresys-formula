@@ -1,6 +1,8 @@
 class Nginx < Coresys::Formula
-  url 'http://nginx.org/download/nginx-1.0.15.tar.gz'
-  digest :sha1, 'e506b301ea849f58f2efb499d77b819fe55eea9a'
+  stable do
+    url 'http://nginx.org/download/nginx-1.2.0.tar.gz'
+    digest :sha1, '15cec8d1b8dbf2007f9f99594a08a2f45814034e'
+  end
 
   def install
     system './configure', '--builddir=build', "--prefix=#{prefix}",
