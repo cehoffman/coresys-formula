@@ -1,17 +1,17 @@
 class GitManuals < Coresys::Formula
-  url 'http://git-core.googlecode.com/files/git-manpages-1.7.10.tar.gz'
-  digest :sha1, '5852d1dead0190edeba1803a70fac5d76523a616'
+  url 'http://git-core.googlecode.com/files/git-manpages-1.8.1.2.tar.gz'
+  digest :sha1, '142222a27dfec52256831f2d0e2ee655f75c1077'
 end
 
 class GitHtmldocs < Coresys::Formula
-  url 'http://git-core.googlecode.com/files/git-htmldocs-1.7.10.tar.gz'
-  digest :sha1, 'd624d67dd4988dad8164f4395d74b73c21434a29'
+  url 'http://git-core.googlecode.com/files/git-htmldocs-1.8.1.2.tar.gz'
+  digest :sha1, '3df491003d026b8f4b2de378e57b930a98f0a595'
 end
 
 class Git < Coresys::Formula
   homepage 'http://git-scm.com'
-  url 'http://git-core.googlecode.com/files/git-1.7.10.tar.gz'
-  digest :sha1, '501ee8685c148d377950e42c111e01d83fd1d41a'
+  url 'http://git-core.googlecode.com/files/git-1.8.1.2.tar.gz'
+  digest :sha1, '29a2dee568b1f86e9d3d8f9dcc376f24439b6a0c'
 
   # head 'https://github.com/git/git.git'
 
