@@ -1,7 +1,7 @@
 class Vim < Coresys::Formula
-  url 'https://github.com/b4winckler/vim.git', tag: 'v7-3-496'
+  url 'https://github.com/b4winckler/vim.git', tag: 'v7-3-789'
   homepage 'http://www.vim.org/'
-  version '7.3.496'
+  version '7.3.789'
 
   def install
     system './configure', "--prefix=#{prefix}",
