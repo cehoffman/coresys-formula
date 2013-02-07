@@ -47,8 +47,17 @@ class Git < Coresys::Formula
                    # "LDFLAGS=#{ENV.ldflags}",
                    "install"
 
-    # install the completion script first because it is inside 'contrib'
-    (prefix+'etc/bash_completion.d').install 'contrib/completion/git-completion.bash'
+    cd 'contrib/subtree' do
+      system 'make'#, "CC=#{ENV.cc}",
+                     # "CFLAGS=#{ENV.cflags}",
+                     # "LDFLAGS=#{ENV.ldflags}"
+      bin.install 'git-subtree'
+    end
+
+    bash_completion.install 'contrib/completion/git-completion.bash'
+    bash_completion.install 'contrib/completion/git-prompt.sh'
+    zsh_completion.install 'contrib/completion/git-completion.zsh' => '_git'
+
     (share+'git-core').install 'contrib'
 
     # We could build the manpages ourselves, but the build process depends
