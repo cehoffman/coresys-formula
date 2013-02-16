@@ -1,28 +1,24 @@
 class GitManuals < Coresys::Formula
-  url 'http://git-core.googlecode.com/files/git-manpages-1.8.1.2.tar.gz'
-  digest :sha1, '142222a27dfec52256831f2d0e2ee655f75c1077'
+  url 'http://git-core.googlecode.com/files/git-manpages-1.8.1.3.tar.gz'
+  digest :sha1, '12aaa8a0428e64d194665379ab0335d786728930'
 end
 
 class GitHtmldocs < Coresys::Formula
-  url 'http://git-core.googlecode.com/files/git-htmldocs-1.8.1.2.tar.gz'
-  digest :sha1, '3df491003d026b8f4b2de378e57b930a98f0a595'
+  url 'http://git-core.googlecode.com/files/git-htmldocs-1.8.1.3.tar.gz'
+  digest :sha1, '6b1e57bde2f2b0a86532390c15bfa7b181c50db2'
 end
 
 class Git < Coresys::Formula
   homepage 'http://git-scm.com'
-  url 'http://git-core.googlecode.com/files/git-1.8.1.2.tar.gz'
-  digest :sha1, '29a2dee568b1f86e9d3d8f9dcc376f24439b6a0c'
+  url 'http://git-core.googlecode.com/files/git-1.8.1.3.tar.gz'
+  digest :sha1, '29ed9047263f9835726200226451339276641779'
 
   # head 'https://github.com/git/git.git'
 
-  # depends_on 'pcre' if ARGV.include? '--with-pcre'
+  option 'blk-sha1', 'compile with the optimized SHA1 implementation'
+  option 'pcre',  'compile with the PCRE library'
 
-  def options
-    [
-      ['--with-blk-sha1', 'compile with the optimized SHA1 implementation'],
-      ['--with-pcre', 'compile with the PCRE library'],
-    ]
-  end
+  depends_on 'pcre' if ARGV.include?('--with-pcre')
 
   def install
     # If these things are installed, tell Git build system to not use them
@@ -71,7 +67,7 @@ class Git < Coresys::Formula
       #{etc}/bash_completion.d
 
     The 'contrib' directory has been installed to:
-      #{HOMEBREW_PREFIX}/share/git-core/contrib
+      #{Coresys.base}/share/git-core/contrib
     EOS
   end
 end
