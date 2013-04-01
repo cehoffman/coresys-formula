@@ -1,7 +1,12 @@
 class Nginx < Coresys::Formula
   stable do
-    url 'http://nginx.org/download/nginx-1.2.0.tar.gz'
-    digest :sha1, '15cec8d1b8dbf2007f9f99594a08a2f45814034e'
+    url 'http://nginx.org/download/nginx-1.2.7.tar.gz'
+    sha1 '65309abde9d683ece737da7a354c8fae24e15ecb'
+  end
+
+  devel do
+    url 'http://nginx.org/download/nginx-1.3.15.tar.gz'
+    sha1 '16488c527078e26c32b0e467120501abf927fc8f'
   end
 
   def install
@@ -15,7 +20,6 @@ class Nginx < Coresys::Formula
           "--http-proxy-temp-path=#{var}/nginx/tmp/proxy",
           "--http-fastcgi-temp-path=#{var}/nginx/tmp/fcgi",
           '--with-md5-asm', '--with-sha1-asm', '--with-pcre',
-          '--without-http_access_module',
           '--without-http_geo_module',
           '--without-http_scgi_module',
           '--without-http_ssi_module',
